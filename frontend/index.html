@@ -12,4 +12,44 @@
 <header class="top-header">
     <div class="logo">🚧 ServiceConnect</div>
     <select id="locationSelect">
-       
+        <option value="">Select Location</option>
+        <option>Delhi</option>
+        <option>Mumbai</option>
+        <option>Bangalore</option>
+        <option>Chennai</option>
+        <option>Hyderabad</option>
+        <option>Pune</option>
+        <option>Kolkata</option>
+        <option>Ahmedabad</option>
+        <option>Jaipur</option>
+        <option>Coimbatore</option>
+        <option>Madurai</option>
+        <option>Trichy</option>
+        <option>Salem</option>
+    </select>
+</header>
+
+<!-- SEARCH BAR -->
+<section class="search-bar">
+    <input type="text" id="globalSearch" placeholder="Search for JCB, Mechanic, Labour..." onkeyup="globalSearch()">
+</section>
+
+<!-- MAIN CATEGORIES -->
+<section class="categories">
+    <div class="category" onclick="showSubCategory('vehicles')">🚜 Power Vehicles</div>
+    <div class="category" onclick="showSubCategory('services')">🔧 Skilled Services</div>
+    <div class="category" onclick="showSubCategory('labour')">👷 Manual Labour</div>
+</section>
+
+<!-- SUB CATEGORIES -->
+<section class="sub-categories" id="subCategories"></section>
+
+<!-- RESULTS -->
+<section class="results">
+    <h2>Available Providers</h2>
+    <div id="resultsGrid"></div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
