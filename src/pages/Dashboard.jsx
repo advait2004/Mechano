@@ -92,20 +92,29 @@ export default function Dashboard() {
                     </button>
                 </div>
 
-           vmdskvndsvlkndskvmds
-                v,ldsvmldskvm;ldsmv;ldsvm
-                vmklsmvkdsmvkdsmv;sdmv;
-                mvklsdmvksdmvkdsmv;kdslmv;ldsmvl;dsmvl;dsvk;dsv;ldsm;ldm
-                
-                
-                
-                
-                vksdmvkldsmvksdmv;lds
-                v;ldsmv;ldsmv;ldsvm
-                mvm;lsmv;lmds;lv
-                ;vlms;lvmsd;lv
-                s;lvm;sldvm;lds{item.badge}
+                {/* Listings Grid (Dynamic) */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 animate-in fade-in zoom-in-95 duration-500 key={activeCategory}">
+                    {activeCategory === 'machinery' ? (
+                        machineryListings.map((item) => (
+                            <div key={item.id} className="bg-white rounded-xl border border-primary/10 overflow-hidden shadow-sm hover:shadow-[0_8px_24px_rgba(0,0,0,0.05)] hover:-translate-y-1 transition-all group">
+                                <div className="aspect-[4/3] bg-gray-100 relative">
+                                    <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
+                                    <button className="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center text-[#8a7560] hover:text-red-500 shadow-sm transition-colors">
+                                        <span className="material-symbols-outlined text-[18px]">favorite</span>
+                                    </button>
+                                    {item.badge && (
+                                        <span className={`absolute top-3 left-3 text-[10px] font-bold px-2 py-1 rounded shadow-sm ${item.badge === 'FAST DELIVERY' ? 'bg-primary text-white' : 'bg-blue-600 text-white'}`}>
+                                            {item.badge}
                                         </span>
+                                    )}
+                                </div>
+                                <div className="p-4">
+                                    <div className="flex justify-between items-start mb-2">
+                                        <h3 className="text-sm font-bold text-[#181411] line-clamp-1 group-hover:text-primary transition-colors">{item.title}</h3>
+                                        <div className="flex items-center gap-1 px-1.5 py-0.5 rounded bg-yellow-100 text-yellow-700 text-[10px] font-bold">
+                                            <span className="material-symbols-outlined text-[12px] fill-current">star</span>
+                                            {item.rating}
+                                        </div>
                                     </div>
                                     <div className="flex items-center gap-1 text-xs text-[#8a7560] mb-4">
                                         <span className="material-symbols-outlined text-[14px]">location_on</span>
