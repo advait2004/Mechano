@@ -3,7 +3,7 @@ import { useMarketplace } from '../context/MarketplaceContext';
 
 import { useState } from 'react';
 
-export default function Dashboard() {kvlsdkvldsv
+export default function Dashboard() {
     const { currentUser } = useAuth();
     const {
         searchResults,
