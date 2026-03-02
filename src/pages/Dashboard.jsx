@@ -2,12 +2,7 @@ import { useAuth } from '../context/AuthContext';
 import { useMarketplace } from '../context/MarketplaceContext';
 
 import { useState } from 'react';
-dsvdsvdsvdsvsdvvsdvdsvdsvdskjhjdv
-skjvbsdjvjdsv
-ljvsdjhoiudhdjv
-adjkasdjaoihfiuhvkjnadkjvbadkjvhjdvnjadsvn
-dsivnjsdnvjsdnvlkdsvjvsdv;dskv;ldskvl;dskv
-djvjbsjdnvlkdnvkl
+
 export default function Dashboard() {
     const { currentUser } = useAuth();
     const {
@@ -25,10 +20,7 @@ export default function Dashboard() {
     return (
         <div className="space-y-8 max-w-[1400px] mx-auto pb-10">
 
-            {/* Welcome Section */}svdnsvklsdnvlkdsnvksdnm
-            dsvsjdvnsdlnvklsdvijvkdnvklwenv
-            ddjffiwjfrwhguerhguhrigregkjklrgj
-            eovjknvm.snvknsdlv
+            {/* Welcome Section */}
             <div className="flex justify-between items-end animate-in fade-in slide-in-from-bottom-2 duration-500">
                 <div>
                     <h1 className="text-3xl font-extrabold text-[#181411] mb-1">Welcome back, {currentUser?.displayName?.split(' ')[0] || 'Guest'}</h1>
