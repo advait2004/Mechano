@@ -1,7 +1,9 @@
 import { useMarketplace } from '../context/MarketplaceContext';
 import { Link } from 'react-router-dom';
 
-export 
+export default function CartPage() {
+    const { cart, removeFromCart, getCartTotal, clearCart } = useMarketplace();
+
     const total = getCartTotal();
 
     return (
@@ -13,7 +15,9 @@ export
                     {/* Cart Items */}
                     <div className="flex-1 w-full space-y-4">
                         {cart.map((item) => (
-                            <div key={item.id} className="bg-white ject-cover" />
+                            <div key={item.id} className="bg-white rounded-xl border border-primary/10 p-4 shadow-sm flex flex-col sm:flex-row gap-4 animate-in fade-in slide-in-from-bottom-2 duration-300">
+                                <div className="w-full sm:w-32 h-24 bg-gray-100 rounded-lg overflow-hidden shrink-0">
+                                    <img src={item.image} alt={item.title || item.name} className="w-full h-full object-cover" />
                                 </div>
                                 <div className="flex-1">
                                     <div className="flex justify-between items-start">
@@ -50,7 +54,9 @@ export
                         </button>
                     </div>
 
-                    {/* Summary */}ont-bold text-[#181411] mb-4">Order Summary</h2>
+                    {/* Summary */}
+                    <div className="w-full lg:w-[320px] bg-white rounded-xl border border-primary/10 p-6 shadow-sm sticky top-24">
+                        <h2 className="text-lg font-bold text-[#181411] mb-4">Order Summary</h2>
                         <div className="space-y-2 mb-4 text-sm text-[#5c5044]">
                             <div className="flex justify-between">
                                 <span>Subtotal</span>
@@ -74,7 +80,12 @@ export
                     </div>
                 </div>
             ) : (
-                <div cls like you haven't added any services yet.</p>
+                <div className="text-center py-20 bg-white rounded-xl border border-primary/10 border-dashed">
+                    <div className="w-16 h-16 bg-background-light rounded-full flex items-center justify-center mx-auto mb-4 text-[#8a7560]">
+                        <span className="material-symbols-outlined text-3xl opacity-50">shopping_cart</span>
+                    </div>
+                    <h3 className="text-lg font-bold text-[#181411] mb-1">Your cart is empty</h3>
+                    <p className="text-sm text-[#8a7560] mb-6">Looks like you haven't added any services yet.</p>
                     <Link to="/dashboard" className="px-6 py-2.5 bg-primary text-white font-bold text-sm rounded-lg hover:bg-[#d9720b] transition-colors shadow-lg shadow-primary/20">
                         Browse Services
                     </Link>
